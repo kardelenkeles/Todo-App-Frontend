@@ -24,10 +24,10 @@ export class WelcomeComponent implements OnInit {
     this.name = this.route.snapshot.params['name'];
   }
 
-  getWelcomeMessage() {
+  getWelcomeMessageWithParameter() {
     // console.log(this.service.executeBeanService());
 
-    this.service.executeBeanService().subscribe(
+    this.service.executeBeanServiceWithPath(this.name).subscribe(
       response => this.handleSuccessfulResponse(response),
       error => this.handleResponseError(error)
     );
