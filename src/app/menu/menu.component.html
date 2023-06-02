@@ -1,0 +1,17 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <div><a class="navbar-brand">KARDELEN</a></div>
+
+
+    <ul class="navbar-nav">
+      <li><a *ngIf="HardCodedAuthService.isUserLoggedIn()" class="nav-item nav-link active" routerLink="/welcome">Home</a></li>
+      <li><a *ngIf="HardCodedAuthService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/todos">Todos</a></li>
+    </ul>
+
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <a *ngIf="!HardCodedAuthService.isUserLoggedIn()" class="nav-item nav-link " routerLink="/login">Login</a>
+      <a *ngIf="HardCodedAuthService.isUserLoggedIn()" class="nav-item nav-link " routerLink="/logout">Logout</a>
+    </ul>
+
+  </nav>
+</header>
