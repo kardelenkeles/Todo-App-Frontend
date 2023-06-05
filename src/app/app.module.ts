@@ -14,6 +14,7 @@ import {FooterComponent} from "./footer/footer.component";
 import {LogoutComponent} from "./logout/logout.component";
 import {RouteGuardService} from "./service/route-guard.service";
 import {HttpClientModule} from "@angular/common/http";
+import {TodoComponent} from "./todo/todo.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     ListTodosComponent,
     MenuComponent,
     FooterComponent,
-    LogoutComponent
+    LogoutComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
