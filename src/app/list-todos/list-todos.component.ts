@@ -17,6 +17,8 @@ export class Todo {
   styleUrls: ['./list-todos.component.css']
 })
 export class ListTodosComponent implements OnInit {
+ // @ts-ignore
+  todos: Todo[]
 
   constructor(
     private todoService: TodoDataService,
