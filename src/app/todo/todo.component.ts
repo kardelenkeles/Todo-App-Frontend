@@ -36,16 +36,21 @@ export class TodoComponent implements OnInit {
 
   saveTodo() {
     if (this.id !== -1) {
-      //create todo
-    else
-      {
-        this.todoService.updateTodo('keles', this.id, this.todo)
-          .subscribe(
-            data => {
-              console.log(data)
-              this.router.navigate(['todos'])
-            }
-          )
-      }
+      this.todoService.createTodo('keles', this.todo)
+        .subscribe(
+          data => {
+            console.log(data)
+            this.router.navigate(['todos'])
+          }
+        )
+    } else {
+      this.todoService.updateTodo('keles', this.id, this.todo)
+        .subscribe(
+          data => {
+            console.log(data)
+            this.router.navigate(['todos'])
+          }
+        )
     }
-  }}
+  }
+}

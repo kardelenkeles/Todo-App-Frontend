@@ -28,4 +28,8 @@ export class TodoDataService {
   updateTodo(username: string, id: number, todo: Object) {
     return this.http.put(`http://localhost:8080/users/${username}/todos/${id}`, todo);
   }
+
+  createTodo(username: string, todo: Object) {
+    return this.http.post(`http://localhost:8080/users/${username}/todos`, todo);
+  }
 }
