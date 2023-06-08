@@ -17,11 +17,15 @@ export class TodoDataService {
     return this.http.get<Todo[]>(`http://localhost:8080/users/${username}/todos`)
   }
 
-  deleteTodo(username:string, id:number){
+  deleteTodo(username: string, id: number) {
     return this.http.delete(`http://localhost:8080/users/${username}/todos/${id}`);
   }
 
-  retrieveTodo(username:string, id:number){
+  retrieveTodo(username: string, id: number) {
     return this.http.get<Todo>(`http://localhost:8080/users/${username}/todos/${id}`);
+  }
+
+  updateTodo(username: string, id: number, todo: Object) {
+    return this.http.put(`http://localhost:8080/users/${username}/todos/${id}`, todo);
   }
 }
