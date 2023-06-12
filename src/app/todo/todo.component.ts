@@ -11,8 +11,8 @@ import {logMessages} from "@angular-devkit/build-angular/src/builders/browser-es
 })
 export class TodoComponent implements OnInit {
 
-  id: number
-  todo: Object
+  id: number = 0;
+  todo: Todo = new Todo(this.id, '', false, new Date());
 
   constructor(
     private todoService: TodoDataService,
@@ -26,7 +26,7 @@ export class TodoComponent implements OnInit {
 
     this.todo = new Todo(this.id, '', false, new Date());
 
-    if (this.id !== -1) {
+    if (this.id !== null) {
       this.todoService.retrieveTodo('keles', this.id)
         .subscribe(
           data => this.todo = data
@@ -35,7 +35,7 @@ export class TodoComponent implements OnInit {
   }
 
   saveTodo() {
-    if (this.id !== -1) {
+    if (this.id !== null) {
       this.todoService.createTodo('keles', this.todo)
         .subscribe(
           data => {
@@ -43,7 +43,7 @@ export class TodoComponent implements OnInit {
             this.router.navigate(['todos'])
           }
         )
-    } else {
+    } else{
       this.todoService.updateTodo('keles', this.id, this.todo)
         .subscribe(
           data => {
